@@ -16,6 +16,6 @@ export class AppComponent {
   }
 
   openEureka() {
-    window.open('http://localhost:8761/');
+    window.open('http://localhost:8763/');
   }
 }
