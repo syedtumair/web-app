@@ -21,18 +21,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Swagger {
 	@Bean
 	public Docket apiDocket() {
-
-		Contact contact = new Contact("Miloš Vukmanović", "https://github.com/vukmanovicmilos",
-				"vukmanovic.milos@gmail.com");
-
+		Contact contact = new Contact("Umair", "https://github.com/syedtumair", "syedtumair@gmai.com");
 		List<VendorExtension> vendorExtensions = new ArrayList<>();
-
-		ApiInfo apiInfo = new ApiInfo("Spring Boot Microservices Documentation", "This pages documents microservice endpoints", "1.0",
-				"https://github.com/vukmanovicmilos/microservices", contact, "", "", vendorExtensions);
-
+		ApiInfo apiInfo = new ApiInfo("Service Documentation", "This pages documents service endpoints", "1.0",
+				"https://github.com/syedtumair", contact, "", "", vendorExtensions);
 		Docket docket = new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo).select()
 				.apis(RequestHandlerSelectors.basePackage("com.microservices")).paths(PathSelectors.any()).build();
-
 		return docket;
 
 	}

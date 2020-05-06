@@ -3,7 +3,7 @@ server:
 eureka:
     client:
       serviceUrl:
-         #defaultZone: http://netflix-eureka:8763/eureka #docker
+         #defaultZone: http://netflix-eureka:8761/eureka #docker
           defaultZone: http://localhost:8763/eureka
 spring:
   datasource:
