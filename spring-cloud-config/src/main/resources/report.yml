@@ -9,7 +9,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     initialization-mode: always
-    password: postgres
+    password: servicedb123
     platform: postgres
    #url: jdbc:postgresql://host.docker.internal:5432/faculty #docker
     url: jdbc:postgresql://servicedb.cmiwljpzwpm2.eu-west-1.rds.amazonaws.com:5432/faculty
