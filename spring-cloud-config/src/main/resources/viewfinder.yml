@@ -1,0 +1,38 @@
+server:
+  port: 9310
+  hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    password: postgres
+    platform: postgres
+   #url: jdbc:postgresql://host.docker.internal:5432/faculty #docker
+    url: jdbc:postgresql://servicedb.cmiwljpzwpm2.eu-west-1.rds.amazonaws.com:5432/faculty
+    username: postgres
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  cloud:
+    config:
+      override-none: true
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+eureka:
+    client:
+      serviceUrl:
+         #defaultZone: http://netflix-eureka:8763/eureka #docker
+          defaultZone: http://localhost:8763/eureka

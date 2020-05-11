@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: viewfinder
+  cloud:
+    config:
+     #uri: http://spring-cloud-config:8888 #docker
+      uri: http://localhost:8888
+      failFast: true
