@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.viewfinder.service.ViewFinderService;
 import com.microservices.viewfinder.controller.pojo.TokenDecisionResponse;
+import com.microservices.viewfinder.service.ViewFinderService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,6 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class ViewfinderController {
 
+	@Autowired
 	@Qualifier("ViewFinderService")
 	public ViewFinderService viewFinderService;
 

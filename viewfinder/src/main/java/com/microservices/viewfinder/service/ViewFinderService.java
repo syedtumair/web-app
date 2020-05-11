@@ -1,4 +1,4 @@
-package com.microservice.viewfinder.service;
+package com.microservices.viewfinder.service;
 
 import org.springframework.http.ResponseEntity;
 
