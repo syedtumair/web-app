@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { fadeAnimation } from './animations';
+import { ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
@@ -10,6 +11,11 @@ import { fadeAnimation } from './animations';
 })
 export class AppComponent {
   title = 'frontend';
+  params: Params;
+
+
+  constructor(private route: ActivatedRoute){}
+
 
   openSwagger() {
     window.open('http://localhost:8765/swagger-ui.html');
@@ -18,4 +24,12 @@ export class AppComponent {
   openEureka() {
     window.open('http://localhost:8763/');
   }
+  
+  ngOnInit() {
+    this.route.queryParams.subscribe((params: Params) => {
+      this.params = params;
+      console.log('App params', params);
+          });
+
+}
 }
