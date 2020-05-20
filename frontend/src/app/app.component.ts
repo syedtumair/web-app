@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fadeAnimation } from './animations';
 import { ActivatedRoute, Params } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -12,9 +11,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class AppComponent {
   title = 'frontend';
   params: Params;
+  authToken : string;
+  static myParam : string;
 
 
-  constructor(private route: ActivatedRoute){}
+  constructor(private route: ActivatedRoute){
+  }
 
 
   openSwagger() {
@@ -26,10 +28,13 @@ export class AppComponent {
   }
   
   ngOnInit() {
-    this.route.queryParams.subscribe((params: Params) => {
-      this.params = params;
-      console.log('App params', params);
-          });
-
-}
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+      this.authToken = params['authToken'];
+      if(this.authToken != null){
+        AppComponent.myParam = this.authToken;
+        console.log("authToken is inside ngOnInit() ", AppComponent.myParam)
+      }
+    })
+  }
 }
