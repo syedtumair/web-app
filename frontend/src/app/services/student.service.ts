@@ -18,6 +18,7 @@ export class StudentService {
 
     }
     public getStudentsForCourse(page: number, size: number, courseId: number): Observable<Student[]> {
+        
         let headers = this.getHeaders();
         console.log(this.API_URL + 'studentsForCourse/' + courseId + '?page=' + page + '&size=' + size)
         return this.httpClient.get<Student[]>(this.API_URL + 'studentsForCourse/' + courseId + '?page=' + page + '&size=' + size, {headers : headers});
@@ -53,6 +54,7 @@ export class StudentService {
         let httpHeader = new HttpHeaders();
         httpHeader = httpHeader.set('authToken' , AppComponent.myParam);
         return httpHeader;
+
     }
 
 }

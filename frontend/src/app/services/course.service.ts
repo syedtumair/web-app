@@ -20,6 +20,7 @@ export class CourseService {
         let headers = this.getHeaders();
         console.log(this.API_URL + filter + '?page=' + page + '&size=' + size)
         return this.httpClient.get<Course[]>(this.API_URL + filter + '?page=' + page + '&size=' + size , {headers : headers});
+
     }
 
     public getPdf(courseId) {
@@ -33,6 +34,7 @@ export class CourseService {
     }
 
     public addCourse(course: Course): void {
+
         let headers = this.getHeaders();
         this.httpClient.post(this.API_URL, course ,  {headers: headers}).subscribe();
     }
@@ -40,6 +42,7 @@ export class CourseService {
     public updateCourse(course: Course): void {
         let headers = this.getHeaders();
         this.httpClient.put(this.API_URL, course, {headers: headers}).subscribe();
+
     }
 
     public deleteCourse(id: number): void {
